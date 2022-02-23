@@ -15,7 +15,6 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded', () => {
-  
     const movieDB = {
         movies: [
             "Логан",
@@ -37,35 +36,34 @@ document.addEventListener('DOMContentLoaded', () => {
     addForm.addEventListener('submit', (event) => {
         event.preventDefault();
 
-        let newFilm = addInput.value;
-        const favorite = checkbox.checked;
+        let newFilm = addInput.value,
+              favorit = checkbox.checked;
 
-        if (newFilm) {  
-            
-            if (newFilm.length > 21) {
-                newFilm = `${newFilm.substring(0,22)}...`;
-            } 
-            
-            if (favorite) {
-                console.log("Добавляем любимый фильм");
+        if (newFilm) {
+
+            if(newFilm.length > 21) {
+                newFilm = `${newFilm.substring(0, 22)}...`;
             }
 
             movieDB.movies.push(newFilm);
             sortArr(movieDB.movies);
-            
-            createMovieList(movieDB.movies, movieList);
+    
+            creatMovieList(movieDB.movies, movieList);
         }
 
-        event.target.reset();
+        if (favorit) {
+            console.log('Добавляем любимый фильм');
+        }
 
+        addForm.reset();
     });
-
+    
     const deleteAdv = (arr) => {
         arr.forEach(item => {
             item.remove();
         });
     };
-    
+
     deleteAdv(adv);
 
     const makeChanges = () => {
@@ -80,39 +78,26 @@ document.addEventListener('DOMContentLoaded', () => {
         arr.sort();
     };
 
-    movieDB.movies.sort();
-    
-    movieDB.movies.forEach((film, i) => {
-        movieList.innerHTML += `
-            <li class="promo__interactive-item"> ${i + 1} ${film}
-                <div class="delete"></div>
-            </li>
-        `;
-    });
-
-    function createMovieList(films, parent) {
-        parent.innerHTML = "";
+    function creatMovieList (films, parent) {
+        parent.innerHTML = '';
         sortArr(films);
         
         films.forEach((film, i) => {
             parent.innerHTML += `
-                <li class="promo__interactive-item"> ${i + 1} ${film}
+                <li class="promo__interactive-item">${i + 1} ${film}
                     <div class="delete"></div>
                 </li>
             `;
         });
-
         document.querySelectorAll('.delete').forEach((btn, i) => {
             btn.addEventListener('click', () => {
                 btn.parentElement.remove();
                 movieDB.movies.splice(i, 1);
-
-                createMovieList(films, parent);
+                creatMovieList(films, parent);
             });
         });
     }
 
-    createMovieList(movieDB.movies, movieList);
+    creatMovieList(movieDB.movies, movieList);
 
 });
-
