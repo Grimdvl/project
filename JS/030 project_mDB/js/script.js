@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         event.preventDefault();
 
         let newFilm = addInput.value,
-              favorit = checkbox.checked;
+            favorit = checkbox.checked;
 
         if (newFilm) {
 
