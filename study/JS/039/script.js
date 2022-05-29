@@ -7,7 +7,7 @@ function myAnimation() {
     let pos = 0,
         finalpos = 300;
 
-    const id = setInterval(frame, 5);
+    const id = setInterval(frame, 50);
     function frame() {
         // for (let pos = 0; pos == clearInterval(id); pos--) {
             if (pos == finalpos) {
