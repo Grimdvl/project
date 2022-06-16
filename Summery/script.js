@@ -1,1 +1,0 @@
-const deadline = '2022'

@@ -1,0 +1,45 @@
+* {
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    display: block;
+    font-size: 20px;
+}
+
+.head {
+    margin: 0 auto;
+    width: 1280px;
+    height: 60px;
+    background: blue;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+}
+.logo span {
+    background: white;
+    padding: 0px 5px;
+    color: blue;
+}
+
+.search  input {
+    padding: 10px, 20px;
+    color: black;
+}
+
+.navHead ul {
+    display: flex;
+    list-style-type: none;
+}
+.navHead ul li {
+    margin-right: 20px;
+}
+.navHead ul li:last-child {
+    margin-right: 0px;
+}
