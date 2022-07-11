@@ -381,47 +381,75 @@ nav
 		transform: translateX(-50%)
 		bottom: 23px
 
-footer
-	min-height: 134px
-	padding: 11px 0 14px 0
-	display: flex
-	justify-content: center
-	.divider
-		width: 301px
-		height: 7px
-		background: #1FBAD6
-		margin: 0 auto
-	.footer_nav
-		margin: 0 auto
-		text-align: center
-		&_navigation
-			list-style-type: none
+footer 
+	padding: 14px 23px 39px 23px
+	a 
+		&:hover 
 			text-decoration: none
-			font-weight: 300
-			font-size: 15px
-			line-height: 68px
-			text-transform: uppercase
-			color: #070716
-	.footer_info
+.footer
+	&_divider
+		width: 299px
+		height: 4px
+		background-color: #1fbad6
 		margin: 0 auto
-		text-align: center
-		&_list
-			list-style-type: none
+	&_wrapper
+		display: flex 
+		justify-content: space-between
+		align-items: flex-start
+		padding-top: 32px
+	&_wrapper > div
+		width: 33%
+		.footer_mobile > a
 			text-decoration: none
-			font-weight: 300
+		&:nth-child(3)
+			display: flex 
+			justify-content: flex-end
+	&_social
+		width: 160px
+		display: flex
+		justify-content: space-between
+		&_item 
+			display: flex 
+			justify-content: center
+			align-items: center
+			margin: 0 4px 
+			width: 32px
+			height: 32px
+			background-color: #070716
+			border-radius: 100%
+			text-decoration: none
+			i 
+				color: #fff
+	&_links
+		width: 390px
+		margin: 0 auto
+		&_main 
+			display: flex 
+			justify-content: space-between
+			padding: 0 10px
+			a 
+				color: #070716
+				font-size: 15px
+				font-weight: 300
+				text-transform: uppercase
+				text-decoration: none
+		&_sub 
+			display: flex 
+			justify-content: space-between
+			margin-top: 10px
+			a 
+				color: #999999
+				font-size: 11px
+				font-weight: 300
+				text-transform: uppercase
+				text-decoration: none
+		&_lang 
+			display: block 
+			margin: 0 auto
+			color: #1fbad6
 			font-size: 11px
-			line-height: 68px
-			text-transform: uppercase
-			color: #999999
-	.footer_language
-		margin: 0 auto
-		text-align: center
-		&_ua
-			list-style-type: none
-			text-decoration: none
 			font-weight: 400
-			font-size: 11px
-			line-height: 68px
+			margin-top: 19px
 			text-transform: uppercase
-			color: #1FBAD6
-
+			text-align: center
+			text-decoration: none
